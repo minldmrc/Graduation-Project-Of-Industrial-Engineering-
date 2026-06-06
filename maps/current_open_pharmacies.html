@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_73cd358030abdfb62a22c89bf1e4b3d6 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    background: white;
+    border: 2px solid #2B4C7E;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: bold;
+    color: #2B4C7E;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+">
+Ağrı Merkez Mevcut Açık Eczaneler
+</div>
+    
+<div style="
+    position: fixed;
+    bottom: 35px;
+    left: 35px;
+    z-index: 9999;
+    background-color: white;
+    padding: 12px 16px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    font-family: Arial;
+    font-size: 13px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+">
+    <b>Harita Lejandı</b><br>
+    <span style="color:#C0392B; font-size:18px;">●</span> Mevcut açık eczane<br>
+    <hr style="margin: 6px 0;">
+    <b>Toplam eczane:</b> 28
+</div>
+    
+            <div class="folium-map" id="map_73cd358030abdfb62a22c89bf1e4b3d6" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_73cd358030abdfb62a22c89bf1e4b3d6 = L.map(
+                "map_73cd358030abdfb62a22c89bf1e4b3d6",
+                {
+                    center: [39.719211832142854, 43.04219735],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+
+            
+
+        
+    
+            var tile_layer_a1381902c21da929682668d415fab692 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a1381902c21da929682668d415fab692.addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var marker_5984807c14e1c0db74e4ae0b6f67d746 = L.marker(
+                [39.7229779, 43.0534533],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_2a49f741fa388ea8f298d5f42fd62760 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_77ba07ba6556db96b44de9c574dfa821 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_0171f26c7ce9cc2c5668a01a6edb30b4 = $(`<div id="html_0171f26c7ce9cc2c5668a01a6edb30b4" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Altıntaş Eczanesi</h4>         <b>Telefon:</b> +90 472 215 77 77<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.722978, 43.053453     </div>     </div>`)[0];
+                popup_77ba07ba6556db96b44de9c574dfa821.setContent(html_0171f26c7ce9cc2c5668a01a6edb30b4);
+            
+        
+
+        marker_5984807c14e1c0db74e4ae0b6f67d746.bindPopup(popup_77ba07ba6556db96b44de9c574dfa821)
+        ;
+
+        
+    
+    
+            marker_5984807c14e1c0db74e4ae0b6f67d746.bindTooltip(
+                `<div>
+                     Altıntaş Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5984807c14e1c0db74e4ae0b6f67d746.setIcon(icon_2a49f741fa388ea8f298d5f42fd62760);
+            
+    
+            var marker_ecb724b07c3307259594910e215ac2e5 = L.marker(
+                [39.7190719, 43.0450381],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_c8d5c59251f3784976bee56d327b6269 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ae810a553d19c1893a707d56e23ca6ef = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e76ee85a62684f674d515ecff5f13463 = $(`<div id="html_e76ee85a62684f674d515ecff5f13463" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Ağrı Eczanesi</h4>         <b>Telefon:</b> +90 472 215 58 13<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.719072, 43.045038     </div>     </div>`)[0];
+                popup_ae810a553d19c1893a707d56e23ca6ef.setContent(html_e76ee85a62684f674d515ecff5f13463);
+            
+        
+
+        marker_ecb724b07c3307259594910e215ac2e5.bindPopup(popup_ae810a553d19c1893a707d56e23ca6ef)
+        ;
+
+        
+    
+    
+            marker_ecb724b07c3307259594910e215ac2e5.bindTooltip(
+                `<div>
+                     Ağrı Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ecb724b07c3307259594910e215ac2e5.setIcon(icon_c8d5c59251f3784976bee56d327b6269);
+            
+    
+            var marker_59fae2352cd16f6e03c51017c16c4136 = L.marker(
+                [39.7159202, 43.0522466],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_fd4f047bfad1dbcea3e4b139fcf5313d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b703233ff963f53dd0dc0fdc9ef666bf = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_0ab2e43fb031af01745faf3928e89dc8 = $(`<div id="html_0ab2e43fb031af01745faf3928e89dc8" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Büşra Doğan Eczanesi</h4>         <b>Telefon:</b> +90 472 215 29 42<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.715920, 43.052247     </div>     </div>`)[0];
+                popup_b703233ff963f53dd0dc0fdc9ef666bf.setContent(html_0ab2e43fb031af01745faf3928e89dc8);
+            
+        
+
+        marker_59fae2352cd16f6e03c51017c16c4136.bindPopup(popup_b703233ff963f53dd0dc0fdc9ef666bf)
+        ;
+
+        
+    
+    
+            marker_59fae2352cd16f6e03c51017c16c4136.bindTooltip(
+                `<div>
+                     Büşra Doğan Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_59fae2352cd16f6e03c51017c16c4136.setIcon(icon_fd4f047bfad1dbcea3e4b139fcf5313d);
+            
+    
+            var marker_38180aa01b8e6f257fe1dff34d140b18 = L.marker(
+                [39.7227481, 43.0534937],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_aebed50aa1eb535a60e1b1dcdad3e2e4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a48d329baa6104ee120be3a722085521 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_a14408439f22fb445c66754359154094 = $(`<div id="html_a14408439f22fb445c66754359154094" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Demir Eczanesi</h4>         <b>Telefon:</b> +90 472 215 33 34<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.722748, 43.053494     </div>     </div>`)[0];
+                popup_a48d329baa6104ee120be3a722085521.setContent(html_a14408439f22fb445c66754359154094);
+            
+        
+
+        marker_38180aa01b8e6f257fe1dff34d140b18.bindPopup(popup_a48d329baa6104ee120be3a722085521)
+        ;
+
+        
+    
+    
+            marker_38180aa01b8e6f257fe1dff34d140b18.bindTooltip(
+                `<div>
+                     Demir Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_38180aa01b8e6f257fe1dff34d140b18.setIcon(icon_aebed50aa1eb535a60e1b1dcdad3e2e4);
+            
+    
+            var marker_f2e6a39dddf01e67d7121a401678a17d = L.marker(
+                [39.7188346, 43.0499524],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_84067697c40bc74f7f13177188d45d80 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_293f55344bcbb682eb767ba21fc56abc = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d9332e08587cd8746f4656b0ef3bca48 = $(`<div id="html_d9332e08587cd8746f4656b0ef3bca48" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Duman Eczanesi</h4>         <b>Telefon:</b> +90 472 216 11 13<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.718835, 43.049952     </div>     </div>`)[0];
+                popup_293f55344bcbb682eb767ba21fc56abc.setContent(html_d9332e08587cd8746f4656b0ef3bca48);
+            
+        
+
+        marker_f2e6a39dddf01e67d7121a401678a17d.bindPopup(popup_293f55344bcbb682eb767ba21fc56abc)
+        ;
+
+        
+    
+    
+            marker_f2e6a39dddf01e67d7121a401678a17d.bindTooltip(
+                `<div>
+                     Duman Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f2e6a39dddf01e67d7121a401678a17d.setIcon(icon_84067697c40bc74f7f13177188d45d80);
+            
+    
+            var marker_4db9292f71a829455d06d60b55c7e0d9 = L.marker(
+                [39.7161242, 43.0099022],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_db743936aefbe60390d0cf2359480ec4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a737cef72bbe2e3e59dd53002c21836e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_3e0b239a15f6716fa0acf21983fdf204 = $(`<div id="html_3e0b239a15f6716fa0acf21983fdf204" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Duru Eczanesi</h4>         <b>Telefon:</b> +90 472 215 06 61<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.716124, 43.009902     </div>     </div>`)[0];
+                popup_a737cef72bbe2e3e59dd53002c21836e.setContent(html_3e0b239a15f6716fa0acf21983fdf204);
+            
+        
+
+        marker_4db9292f71a829455d06d60b55c7e0d9.bindPopup(popup_a737cef72bbe2e3e59dd53002c21836e)
+        ;
+
+        
+    
+    
+            marker_4db9292f71a829455d06d60b55c7e0d9.bindTooltip(
+                `<div>
+                     Duru Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4db9292f71a829455d06d60b55c7e0d9.setIcon(icon_db743936aefbe60390d0cf2359480ec4);
+            
+    
+            var marker_6ad2c4ef73bf8dfca4f231748ded6165 = L.marker(
+                [39.7215006, 43.0141763],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_9b2bdfdd2976c8c31b5f901f1c9aee92 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a817fc8336b0c24d5a1026d2b12f2442 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_57c86b2a3e22f3eaf74cf6c1e3e9a8da = $(`<div id="html_57c86b2a3e22f3eaf74cf6c1e3e9a8da" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Furkan Eczanesi</h4>         <b>Telefon:</b> +90 546 215 33 44<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.721501, 43.014176     </div>     </div>`)[0];
+                popup_a817fc8336b0c24d5a1026d2b12f2442.setContent(html_57c86b2a3e22f3eaf74cf6c1e3e9a8da);
+            
+        
+
+        marker_6ad2c4ef73bf8dfca4f231748ded6165.bindPopup(popup_a817fc8336b0c24d5a1026d2b12f2442)
+        ;
+
+        
+    
+    
+            marker_6ad2c4ef73bf8dfca4f231748ded6165.bindTooltip(
+                `<div>
+                     Furkan Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6ad2c4ef73bf8dfca4f231748ded6165.setIcon(icon_9b2bdfdd2976c8c31b5f901f1c9aee92);
+            
+    
+            var marker_249e0823ec3c0d7bf722c3748c0f070e = L.marker(
+                [39.714272, 43.0532605],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_0e11ed4289c41c4cfaa7dd844026c57f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_96367f7e17362e9088d519e6306cfa8a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_ef598de8c5507111864f67bd68819eb7 = $(`<div id="html_ef598de8c5507111864f67bd68819eb7" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Güven Eczanesi</h4>         <b>Telefon:</b> +90 472 215 01 91<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.714272, 43.053261     </div>     </div>`)[0];
+                popup_96367f7e17362e9088d519e6306cfa8a.setContent(html_ef598de8c5507111864f67bd68819eb7);
+            
+        
+
+        marker_249e0823ec3c0d7bf722c3748c0f070e.bindPopup(popup_96367f7e17362e9088d519e6306cfa8a)
+        ;
+
+        
+    
+    
+            marker_249e0823ec3c0d7bf722c3748c0f070e.bindTooltip(
+                `<div>
+                     Güven Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_249e0823ec3c0d7bf722c3748c0f070e.setIcon(icon_0e11ed4289c41c4cfaa7dd844026c57f);
+            
+    
+            var marker_dfda4f3d0fd4b7ebebfe2713325baf96 = L.marker(
+                [39.7208943, 43.0513805],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_f943ff72225e1a0cf6971283ad2e608d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_75497735a80389be94411611d3980232 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_ea601594d1c324b1bd45a5764d275f13 = $(`<div id="html_ea601594d1c324b1bd45a5764d275f13" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Harun Eczanesi</h4>         <b>Telefon:</b> +90 472 215 25 83<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.720894, 43.051381     </div>     </div>`)[0];
+                popup_75497735a80389be94411611d3980232.setContent(html_ea601594d1c324b1bd45a5764d275f13);
+            
+        
+
+        marker_dfda4f3d0fd4b7ebebfe2713325baf96.bindPopup(popup_75497735a80389be94411611d3980232)
+        ;
+
+        
+    
+    
+            marker_dfda4f3d0fd4b7ebebfe2713325baf96.bindTooltip(
+                `<div>
+                     Harun Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dfda4f3d0fd4b7ebebfe2713325baf96.setIcon(icon_f943ff72225e1a0cf6971283ad2e608d);
+            
+    
+            var marker_e17718d87b45265909401b49e6c5499d = L.marker(
+                [39.7155009, 43.0524941],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_e1991d9b61168ec1ca1ac7ac8d89dc39 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9b33c38c1259d15554f68b549e2e9da4 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_743e25aa139a1366e968632974f55ad2 = $(`<div id="html_743e25aa139a1366e968632974f55ad2" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Hayat Eczanesi</h4>         <b>Telefon:</b> +90 472 215 15 11<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.715501, 43.052494     </div>     </div>`)[0];
+                popup_9b33c38c1259d15554f68b549e2e9da4.setContent(html_743e25aa139a1366e968632974f55ad2);
+            
+        
+
+        marker_e17718d87b45265909401b49e6c5499d.bindPopup(popup_9b33c38c1259d15554f68b549e2e9da4)
+        ;
+
+        
+    
+    
+            marker_e17718d87b45265909401b49e6c5499d.bindTooltip(
+                `<div>
+                     Hayat Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e17718d87b45265909401b49e6c5499d.setIcon(icon_e1991d9b61168ec1ca1ac7ac8d89dc39);
+            
+    
+            var marker_64958ce7f59e60e03752d29a05783c5b = L.marker(
+                [39.7158922, 43.0101364],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_ed87c26e2470f8c650974c93dbc1819f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_368aaf0203a1d8a5b18b36a3dbc552f0 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_b63210328bbfc6332710479a6d77b0a2 = $(`<div id="html_b63210328bbfc6332710479a6d77b0a2" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Hira Eczanesi</h4>         <b>Telefon:</b> +90 472 215 31 41<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.715892, 43.010136     </div>     </div>`)[0];
+                popup_368aaf0203a1d8a5b18b36a3dbc552f0.setContent(html_b63210328bbfc6332710479a6d77b0a2);
+            
+        
+
+        marker_64958ce7f59e60e03752d29a05783c5b.bindPopup(popup_368aaf0203a1d8a5b18b36a3dbc552f0)
+        ;
+
+        
+    
+    
+            marker_64958ce7f59e60e03752d29a05783c5b.bindTooltip(
+                `<div>
+                     Hira Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_64958ce7f59e60e03752d29a05783c5b.setIcon(icon_ed87c26e2470f8c650974c93dbc1819f);
+            
+    
+            var marker_3952b7f1ba61aabe8bd60d92a8acb80d = L.marker(
+                [39.7196722, 43.0518412],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_e5357cdc17e8bc8fe8ab170a8094bd74 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c184e6fea8f2cdf05df76258e00821f1 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_02ef9ccf1cbb6c644877d04b770eab4f = $(`<div id="html_02ef9ccf1cbb6c644877d04b770eab4f" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Konak Eczanesi</h4>         <b>Telefon:</b> +90 472 502 09 88<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.719672, 43.051841     </div>     </div>`)[0];
+                popup_c184e6fea8f2cdf05df76258e00821f1.setContent(html_02ef9ccf1cbb6c644877d04b770eab4f);
+            
+        
+
+        marker_3952b7f1ba61aabe8bd60d92a8acb80d.bindPopup(popup_c184e6fea8f2cdf05df76258e00821f1)
+        ;
+
+        
+    
+    
+            marker_3952b7f1ba61aabe8bd60d92a8acb80d.bindTooltip(
+                `<div>
+                     Konak Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3952b7f1ba61aabe8bd60d92a8acb80d.setIcon(icon_e5357cdc17e8bc8fe8ab170a8094bd74);
+            
+    
+            var marker_f1949b5e3fec8eec953bde53379abffe = L.marker(
+                [39.7161997, 43.0524332],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_51631c6abb2d9237d5e0747fb68222e5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c2cae0445d8ecd38b927ae13d1c95546 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_6ef5c0f5d05277e8b0aaaae226c2536a = $(`<div id="html_6ef5c0f5d05277e8b0aaaae226c2536a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Meydan Eczanesi</h4>         <b>Telefon:</b> +90 472 215 99 66<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.716200, 43.052433     </div>     </div>`)[0];
+                popup_c2cae0445d8ecd38b927ae13d1c95546.setContent(html_6ef5c0f5d05277e8b0aaaae226c2536a);
+            
+        
+
+        marker_f1949b5e3fec8eec953bde53379abffe.bindPopup(popup_c2cae0445d8ecd38b927ae13d1c95546)
+        ;
+
+        
+    
+    
+            marker_f1949b5e3fec8eec953bde53379abffe.bindTooltip(
+                `<div>
+                     Meydan Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f1949b5e3fec8eec953bde53379abffe.setIcon(icon_51631c6abb2d9237d5e0747fb68222e5);
+            
+    
+            var marker_0a174a6584e12ed03ee1c508ec99e5cc = L.marker(
+                [39.7160877, 43.0056424],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_016cdd63424369dac4ae3a185024a7bd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fc15a86115eee2bac411cc4f9fc3389b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_1a1a4a83ccc8f8a3a69fe1efb479c326 = $(`<div id="html_1a1a4a83ccc8f8a3a69fe1efb479c326" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Mızrak Eczanesi</h4>         <b>Telefon:</b> +90 472 215 20 48<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.716088, 43.005642     </div>     </div>`)[0];
+                popup_fc15a86115eee2bac411cc4f9fc3389b.setContent(html_1a1a4a83ccc8f8a3a69fe1efb479c326);
+            
+        
+
+        marker_0a174a6584e12ed03ee1c508ec99e5cc.bindPopup(popup_fc15a86115eee2bac411cc4f9fc3389b)
+        ;
+
+        
+    
+    
+            marker_0a174a6584e12ed03ee1c508ec99e5cc.bindTooltip(
+                `<div>
+                     Mızrak Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0a174a6584e12ed03ee1c508ec99e5cc.setIcon(icon_016cdd63424369dac4ae3a185024a7bd);
+            
+    
+            var marker_81fcf59ea9de88cab0ba026c8b57a4d6 = L.marker(
+                [39.722421, 43.0535395],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_58000fc3314c8373e6919b0603656f4e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1eaaeee31808b4386947e934921ec64a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_2f9b7d7693416d4d688a50eebbb61f11 = $(`<div id="html_2f9b7d7693416d4d688a50eebbb61f11" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Nuray Eczanesi</h4>         <b>Telefon:</b> +90 472 216 56 49<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.722421, 43.053539     </div>     </div>`)[0];
+                popup_1eaaeee31808b4386947e934921ec64a.setContent(html_2f9b7d7693416d4d688a50eebbb61f11);
+            
+        
+
+        marker_81fcf59ea9de88cab0ba026c8b57a4d6.bindPopup(popup_1eaaeee31808b4386947e934921ec64a)
+        ;
+
+        
+    
+    
+            marker_81fcf59ea9de88cab0ba026c8b57a4d6.bindTooltip(
+                `<div>
+                     Nuray Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_81fcf59ea9de88cab0ba026c8b57a4d6.setIcon(icon_58000fc3314c8373e6919b0603656f4e);
+            
+    
+            var marker_c355322698072d64b88afb02a36f0a06 = L.marker(
+                [39.7220764, 43.0536315],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_462e6406e97ab1a9803681c22908ba4a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c2d83113fb69feb4196ff5c26b90f04f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_ae25733b8aeebaa059b5363a12c79d83 = $(`<div id="html_ae25733b8aeebaa059b5363a12c79d83" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Rukiye Eczanesi</h4>         <b>Telefon:</b> +90 472 216 06 06<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.722076, 43.053632     </div>     </div>`)[0];
+                popup_c2d83113fb69feb4196ff5c26b90f04f.setContent(html_ae25733b8aeebaa059b5363a12c79d83);
+            
+        
+
+        marker_c355322698072d64b88afb02a36f0a06.bindPopup(popup_c2d83113fb69feb4196ff5c26b90f04f)
+        ;
+
+        
+    
+    
+            marker_c355322698072d64b88afb02a36f0a06.bindTooltip(
+                `<div>
+                     Rukiye Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c355322698072d64b88afb02a36f0a06.setIcon(icon_462e6406e97ab1a9803681c22908ba4a);
+            
+    
+            var marker_10a2ef1b4d4c7fd76dcde4f85e6f4ac9 = L.marker(
+                [39.7172011, 43.0167646],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_2f82fb0cf1f978a61730c28385c5c930 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1f4e1aa8615e7bff8f8b492b2f9a716e = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_0ea87ce6780c6aa1925970ee233b3cfa = $(`<div id="html_0ea87ce6780c6aa1925970ee233b3cfa" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Sağlık Eczanesi</h4>         <b>Telefon:</b> +90 472 215 75 38<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.717201, 43.016765     </div>     </div>`)[0];
+                popup_1f4e1aa8615e7bff8f8b492b2f9a716e.setContent(html_0ea87ce6780c6aa1925970ee233b3cfa);
+            
+        
+
+        marker_10a2ef1b4d4c7fd76dcde4f85e6f4ac9.bindPopup(popup_1f4e1aa8615e7bff8f8b492b2f9a716e)
+        ;
+
+        
+    
+    
+            marker_10a2ef1b4d4c7fd76dcde4f85e6f4ac9.bindTooltip(
+                `<div>
+                     Sağlık Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_10a2ef1b4d4c7fd76dcde4f85e6f4ac9.setIcon(icon_2f82fb0cf1f978a61730c28385c5c930);
+            
+    
+            var marker_8d0e7c19a573650f269b720242007907 = L.marker(
+                [39.7220952, 43.0534027],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_4ac0345a5ebbb52de7b76ca6d207ab82 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_335bf7ec6626da5375a7cf464b2c2aa7 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_c37c6f6f3f160e3feae50e4461344a20 = $(`<div id="html_c37c6f6f3f160e3feae50e4461344a20" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Uğur Eczanesi</h4>         <b>Telefon:</b> +90 472 216 48 70<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.722095, 43.053403     </div>     </div>`)[0];
+                popup_335bf7ec6626da5375a7cf464b2c2aa7.setContent(html_c37c6f6f3f160e3feae50e4461344a20);
+            
+        
+
+        marker_8d0e7c19a573650f269b720242007907.bindPopup(popup_335bf7ec6626da5375a7cf464b2c2aa7)
+        ;
+
+        
+    
+    
+            marker_8d0e7c19a573650f269b720242007907.bindTooltip(
+                `<div>
+                     Uğur Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8d0e7c19a573650f269b720242007907.setIcon(icon_4ac0345a5ebbb52de7b76ca6d207ab82);
+            
+    
+            var marker_814125fe31c1880c710c28297a206448 = L.marker(
+                [39.7219959, 43.0539487],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_01109f6c28371467836c2c13f82c1a21 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9f9b7157235b21a41d5041930ab52b18 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d9b4b780437232d73bf882948478eecd = $(`<div id="html_d9b4b780437232d73bf882948478eecd" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Yaşam Eczanesi</h4>         <b>Telefon:</b> +90 472 215 42 72<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.721996, 43.053949     </div>     </div>`)[0];
+                popup_9f9b7157235b21a41d5041930ab52b18.setContent(html_d9b4b780437232d73bf882948478eecd);
+            
+        
+
+        marker_814125fe31c1880c710c28297a206448.bindPopup(popup_9f9b7157235b21a41d5041930ab52b18)
+        ;
+
+        
+    
+    
+            marker_814125fe31c1880c710c28297a206448.bindTooltip(
+                `<div>
+                     Yaşam Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_814125fe31c1880c710c28297a206448.setIcon(icon_01109f6c28371467836c2c13f82c1a21);
+            
+    
+            var marker_76d2684c54366ca08cc4b03350165f6d = L.marker(
+                [39.7153267, 43.0529761],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_60c0930468838eadcee8edc9cdc08d3c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_828ccfb99a6671e79c4fe41de626106a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_09c0cf450752b2e94a095603dd078d12 = $(`<div id="html_09c0cf450752b2e94a095603dd078d12" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Yeni Arı Eczanesi</h4>         <b>Telefon:</b> +90 472 216 42 73<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.715327, 43.052976     </div>     </div>`)[0];
+                popup_828ccfb99a6671e79c4fe41de626106a.setContent(html_09c0cf450752b2e94a095603dd078d12);
+            
+        
+
+        marker_76d2684c54366ca08cc4b03350165f6d.bindPopup(popup_828ccfb99a6671e79c4fe41de626106a)
+        ;
+
+        
+    
+    
+            marker_76d2684c54366ca08cc4b03350165f6d.bindTooltip(
+                `<div>
+                     Yeni Arı Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_76d2684c54366ca08cc4b03350165f6d.setIcon(icon_60c0930468838eadcee8edc9cdc08d3c);
+            
+    
+            var marker_8a27a4ead8b01e54f6e298f0c4f06662 = L.marker(
+                [39.7174997, 43.0178907],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_e0b0b8344ff5ce75743184cd7e64d46e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ff9f6be113c177a527206190ac73943 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_8bacff38b6801541622509e4fb617478 = $(`<div id="html_8bacff38b6801541622509e4fb617478" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Yol Eczanesi</h4>         <b>Telefon:</b> +90 472 215 81 86<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.717500, 43.017891     </div>     </div>`)[0];
+                popup_1ff9f6be113c177a527206190ac73943.setContent(html_8bacff38b6801541622509e4fb617478);
+            
+        
+
+        marker_8a27a4ead8b01e54f6e298f0c4f06662.bindPopup(popup_1ff9f6be113c177a527206190ac73943)
+        ;
+
+        
+    
+    
+            marker_8a27a4ead8b01e54f6e298f0c4f06662.bindTooltip(
+                `<div>
+                     Yol Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8a27a4ead8b01e54f6e298f0c4f06662.setIcon(icon_e0b0b8344ff5ce75743184cd7e64d46e);
+            
+    
+            var marker_2fbba02a755d3cceca6eec161272524c = L.marker(
+                [39.7219402, 43.0535694],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_575b6c00346dab4150ad1ca80eb69a76 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7710292b4be7229eed752b4e7376b115 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_c5bbf4ce013ec084728ad230f721b34d = $(`<div id="html_c5bbf4ce013ec084728ad230f721b34d" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Yonca Eczanesi</h4>         <b>Telefon:</b> +90 472 216 58 16<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.721940, 43.053569     </div>     </div>`)[0];
+                popup_7710292b4be7229eed752b4e7376b115.setContent(html_c5bbf4ce013ec084728ad230f721b34d);
+            
+        
+
+        marker_2fbba02a755d3cceca6eec161272524c.bindPopup(popup_7710292b4be7229eed752b4e7376b115)
+        ;
+
+        
+    
+    
+            marker_2fbba02a755d3cceca6eec161272524c.bindTooltip(
+                `<div>
+                     Yonca Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2fbba02a755d3cceca6eec161272524c.setIcon(icon_575b6c00346dab4150ad1ca80eb69a76);
+            
+    
+            var marker_755adf1656dc829c99c3422932ea4d8c = L.marker(
+                [39.7218632, 43.0542548],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_0d53fd2157c719ea0fabd42c0a8ccb10 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c54034b34a5589321da955152fb7b745 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_8fa0bfc9cef2377bcab7b66ecd053127 = $(`<div id="html_8fa0bfc9cef2377bcab7b66ecd053127" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Yıldırım Eczanesi</h4>         <b>Telefon:</b> +90 472 215 92 64<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.721863, 43.054255     </div>     </div>`)[0];
+                popup_c54034b34a5589321da955152fb7b745.setContent(html_8fa0bfc9cef2377bcab7b66ecd053127);
+            
+        
+
+        marker_755adf1656dc829c99c3422932ea4d8c.bindPopup(popup_c54034b34a5589321da955152fb7b745)
+        ;
+
+        
+    
+    
+            marker_755adf1656dc829c99c3422932ea4d8c.bindTooltip(
+                `<div>
+                     Yıldırım Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_755adf1656dc829c99c3422932ea4d8c.setIcon(icon_0d53fd2157c719ea0fabd42c0a8ccb10);
+            
+    
+            var marker_450f73814c37cb7accb2d6fc51d9f525 = L.marker(
+                [39.7213429, 43.0505364],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_d9622e8859b7956737f789795ed2e677 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_30229b14b7e99393628479fb059b9715 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_55fa5af6a0f53399c69bf55caa0e9e6c = $(`<div id="html_55fa5af6a0f53399c69bf55caa0e9e6c" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Zarif Eczanesi</h4>         <b>Telefon:</b> +90 472 215 55 50<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.721343, 43.050536     </div>     </div>`)[0];
+                popup_30229b14b7e99393628479fb059b9715.setContent(html_55fa5af6a0f53399c69bf55caa0e9e6c);
+            
+        
+
+        marker_450f73814c37cb7accb2d6fc51d9f525.bindPopup(popup_30229b14b7e99393628479fb059b9715)
+        ;
+
+        
+    
+    
+            marker_450f73814c37cb7accb2d6fc51d9f525.bindTooltip(
+                `<div>
+                     Zarif Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_450f73814c37cb7accb2d6fc51d9f525.setIcon(icon_d9622e8859b7956737f789795ed2e677);
+            
+    
+            var marker_4c64ace0edbde67757e3ad4eeedf5295 = L.marker(
+                [39.7223294, 43.0505079],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_f037adef570f95e0169e066840db5760 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_681ec23c4da57b340b70ecd465cdffd5 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_9fe3df129f9af419948e2a5df69beb07 = $(`<div id="html_9fe3df129f9af419948e2a5df69beb07" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Zarif Eczanesi</h4>         <b>Telefon:</b> -<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.722329, 43.050508     </div>     </div>`)[0];
+                popup_681ec23c4da57b340b70ecd465cdffd5.setContent(html_9fe3df129f9af419948e2a5df69beb07);
+            
+        
+
+        marker_4c64ace0edbde67757e3ad4eeedf5295.bindPopup(popup_681ec23c4da57b340b70ecd465cdffd5)
+        ;
+
+        
+    
+    
+            marker_4c64ace0edbde67757e3ad4eeedf5295.bindTooltip(
+                `<div>
+                     Zarif Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4c64ace0edbde67757e3ad4eeedf5295.setIcon(icon_f037adef570f95e0169e066840db5760);
+            
+    
+            var marker_676e413e704114505ec0acbe762b6e25 = L.marker(
+                [39.7192052, 43.0515752],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_3e0171aa40ac1496b2aa171eb0ec9f88 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9caa6ed7090525eb464e0800e7ca71fa = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_90dff2b156dfbcc084ef23cc2f188df0 = $(`<div id="html_90dff2b156dfbcc084ef23cc2f188df0" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Çare Eczanesi</h4>         <b>Telefon:</b> +90 472 215 68 60<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.719205, 43.051575     </div>     </div>`)[0];
+                popup_9caa6ed7090525eb464e0800e7ca71fa.setContent(html_90dff2b156dfbcc084ef23cc2f188df0);
+            
+        
+
+        marker_676e413e704114505ec0acbe762b6e25.bindPopup(popup_9caa6ed7090525eb464e0800e7ca71fa)
+        ;
+
+        
+    
+    
+            marker_676e413e704114505ec0acbe762b6e25.bindTooltip(
+                `<div>
+                     Çare Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_676e413e704114505ec0acbe762b6e25.setIcon(icon_3e0171aa40ac1496b2aa171eb0ec9f88);
+            
+    
+            var marker_b463de73b953d2585119a9f3b45376ff = L.marker(
+                [39.7140226, 43.006131],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_be0e8fb12a48be66580ba5313e0e4de3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b6e677498905d7d76599db62c2cd63c3 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_3a0187938d4c4da9a9111e16a179af4b = $(`<div id="html_3a0187938d4c4da9a9111e16a179af4b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">İnci Eczanesi</h4>         <b>Telefon:</b> +90 472 215 47 17<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.714023, 43.006131     </div>     </div>`)[0];
+                popup_b6e677498905d7d76599db62c2cd63c3.setContent(html_3a0187938d4c4da9a9111e16a179af4b);
+            
+        
+
+        marker_b463de73b953d2585119a9f3b45376ff.bindPopup(popup_b6e677498905d7d76599db62c2cd63c3)
+        ;
+
+        
+    
+    
+            marker_b463de73b953d2585119a9f3b45376ff.bindTooltip(
+                `<div>
+                     İnci Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b463de73b953d2585119a9f3b45376ff.setIcon(icon_be0e8fb12a48be66580ba5313e0e4de3);
+            
+    
+            var marker_105640900966a41f0a85bc78eba45d7c = L.marker(
+                [39.7229153, 43.0573464],
+                {
+}
+            ).addTo(map_73cd358030abdfb62a22c89bf1e4b3d6);
+        
+    
+            var icon_775ef67aba90af144be37bdec6799bf9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "plus-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ae435eb144ddc6596e2aaeb86eab36f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_33817ecc5f93c8b0f9e9dd6b57284f57 = $(`<div id="html_33817ecc5f93c8b0f9e9dd6b57284f57" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial; width: 240px;">         <h4 style="margin: 0 0 6px 0; color:#C0392B;">Şükran Eczanesi</h4>         <b>Telefon:</b> -<br>         <b>Adres:</b> -<br>         <b>Koordinat:</b><br>         39.722915, 43.057346     </div>     </div>`)[0];
+                popup_1ae435eb144ddc6596e2aaeb86eab36f.setContent(html_33817ecc5f93c8b0f9e9dd6b57284f57);
+            
+        
+
+        marker_105640900966a41f0a85bc78eba45d7c.bindPopup(popup_1ae435eb144ddc6596e2aaeb86eab36f)
+        ;
+
+        
+    
+    
+            marker_105640900966a41f0a85bc78eba45d7c.bindTooltip(
+                `<div>
+                     Şükran Eczanesi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_105640900966a41f0a85bc78eba45d7c.setIcon(icon_775ef67aba90af144be37bdec6799bf9);
+            
+    
+            map_73cd358030abdfb62a22c89bf1e4b3d6.fitBounds(
+                [[39.7229779, 43.0534533], [39.7190719, 43.0450381], [39.7159202, 43.0522466], [39.7227481, 43.0534937], [39.7188346, 43.0499524], [39.7161242, 43.0099022], [39.7215006, 43.0141763], [39.714272, 43.0532605], [39.7208943, 43.0513805], [39.7155009, 43.0524941], [39.7158922, 43.0101364], [39.7196722, 43.0518412], [39.7161997, 43.0524332], [39.7160877, 43.0056424], [39.722421, 43.0535395], [39.7220764, 43.0536315], [39.7172011, 43.0167646], [39.7220952, 43.0534027], [39.7219959, 43.0539487], [39.7153267, 43.0529761], [39.7174997, 43.0178907], [39.7219402, 43.0535694], [39.7218632, 43.0542548], [39.7213429, 43.0505364], [39.7223294, 43.0505079], [39.7192052, 43.0515752], [39.7140226, 43.006131], [39.7229153, 43.0573464]],
+                {}
+            );
+        
+</script>
+</html>
